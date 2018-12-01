@@ -28,6 +28,9 @@ import org.apache.http.entity.FileEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
+import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO;
+
 public class MainActivity extends AppCompatActivity {
 
     private Camera mCamera;

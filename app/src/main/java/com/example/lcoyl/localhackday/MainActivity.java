@@ -48,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                setContentView(R.layout.photo_screen);
+                //setContentView(R.layout.photo_screen);
                 Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
                 startActivity(intent);
             }

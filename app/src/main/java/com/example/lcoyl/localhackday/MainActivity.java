@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
 
         // get an image from the camera
         mCamera.takePicture(null, null, mPicture);
+
     }
     /** Create a File for saving an image or video */
     private static File getOutputMediaFile(int type){
@@ -104,16 +105,6 @@ public class MainActivity extends AppCompatActivity {
         return mediaFile;
     }
 
-    /** Check if this device has a camera */
-    private boolean checkCameraHardware(Context context) {
-        if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){
-            // this device has a camera
-            return true;
-        } else {
-            // no camera on this device
-            return false;
-        }
-    }
     /** A safe way to get an instance of the Camera object. */
     public static Camera getCameraInstance(){
         Camera c = null;
@@ -126,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         return c; // returns null if camera is unavailable
     }
     public void testSendBinary() throws MalformedURLException {
+
         File picfile = new File("app/sampledata/my_file.jpeg");
         if (!picfile.exists()) throw new AssertionError();
 

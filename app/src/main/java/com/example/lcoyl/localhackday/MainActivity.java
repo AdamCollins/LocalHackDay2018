@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Create an instance of Camera
         mCamera = getCameraInstance();
+
     }
     private void postRequest(){
 

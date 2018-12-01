@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/preferencesTitle"
@@ -21,24 +21,35 @@
 
     <Switch
         android:id="@+id/powerButtonTakesPhotoSwitch"
-        android:layout_width="302dp"
-        android:layout_height="50dp"
-        android:text="Take photo on power button click"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
         android:fontFamily="serif"
-        android:textSize="15dp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="150dp" />
+        android:text="Take photo on power button click"
+        app:layout_constraintBottom_toTopOf="@+id/dayModeSwitch"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Switch
         android:id="@+id/dayModeSwitch"
-        android:layout_width="302dp"
-        android:layout_height="50dp"
-        android:text="Day mode on"
-        android:textSize="15dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="261dp"
         android:fontFamily="serif"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="200dp"
-        />
+        android:text="Day mode on"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/powerButtonTakesPhotoSwitch" />
 
 
 </android.support.constraint.ConstraintLayout>

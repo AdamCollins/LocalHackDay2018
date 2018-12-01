@@ -1,12 +1,15 @@
 package com.example.lcoyl.localhackday;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,6 +42,26 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Create an instance of Camera
         mCamera = getCameraInstance();
+
+
+        Button startButton = findViewById(R.id.startButton);
+        startButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                //setContentView(R.layout.photo_screen);
+                Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        Button preferencesButton = findViewById(R.id.preferencesButton);
+        preferencesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.preferences_layout);
+            }
+        });
+
     }
     private void postRequest(){
 
@@ -112,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             c = Camera.open(); // attempt to get a Camera instance
         }
         catch (Exception e){
-            // Camera is not available (in use or does not exist)
+            Log.d(TAG, e.getMessage());// Camera is not available (in use or does not exist)
         }
         return c; // returns null if camera is unavailable
     }
@@ -120,6 +143,10 @@ public class MainActivity extends AppCompatActivity {
 
         File picfile = new File("app/sampledata/my_file.jpeg");
         if (!picfile.exists()) throw new AssertionError();
+
+
+
+
 
 
         HttpClient httpclient = HttpClients.createDefault();

@@ -1,6 +1,7 @@
 package com.example.lcoyl.localhackday;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Environment;
@@ -48,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v){
                 setContentView(R.layout.photo_screen);
+                Intent intent = new Intent(getApplicationContext(), CameraActivity.class);
+                startActivity(intent);
             }
         });
 
@@ -132,7 +135,7 @@ public class MainActivity extends AppCompatActivity {
             c = Camera.open(); // attempt to get a Camera instance
         }
         catch (Exception e){
-            // Camera is not available (in use or does not exist)
+            Log.d(TAG, e.getMessage());// Camera is not available (in use or does not exist)
         }
         return c; // returns null if camera is unavailable
     }

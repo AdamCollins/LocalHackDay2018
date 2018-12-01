@@ -2,13 +2,20 @@ package com.example.lcoyl.localhackday;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.AppCompatDelegate;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
 public class PreferencesActivity extends AppCompatActivity {
 
+    private Boolean isNightModeEnabled = true;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (AppCompatDelegate.getDefaultNightMode()
+                ==AppCompatDelegate.MODE_NIGHT_YES) {
+            setTheme(R.style.AppTheme_Dark);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preferences_layout);
 

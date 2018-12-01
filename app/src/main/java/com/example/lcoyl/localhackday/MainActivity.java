@@ -142,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
         if (!picfile.exists()) throw new AssertionError();
 
 
+
+
+
+
         HttpClient httpclient = HttpClients.createDefault();
 
         try {

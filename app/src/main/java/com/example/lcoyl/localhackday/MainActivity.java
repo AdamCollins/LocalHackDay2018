@@ -7,6 +7,8 @@ import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,6 +41,24 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // Create an instance of Camera
         mCamera = getCameraInstance();
+
+
+        Button startButton = findViewById(R.id.startButton);
+        startButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                setContentView(R.layout.photo_screen);
+            }
+        });
+
+        Button preferencesButton = findViewById(R.id.preferencesButton);
+        preferencesButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                setContentView(R.layout.preferences_layout);
+            }
+        });
+
     }
     private void postRequest(){
 

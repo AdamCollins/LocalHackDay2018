@@ -26,6 +26,7 @@
         android:layout_height="50dp"
         android:text="Take photo on power button click"
         android:fontFamily="serif"
+        android:textSize="15dp"
         tools:layout_editor_absoluteX="42dp"
         tools:layout_editor_absoluteY="150dp" />
 
@@ -34,6 +35,7 @@
         android:layout_width="302dp"
         android:layout_height="50dp"
         android:text="Day mode on"
+        android:textSize="15dp"
         android:fontFamily="serif"
         tools:layout_editor_absoluteX="42dp"
         tools:layout_editor_absoluteY="200dp"

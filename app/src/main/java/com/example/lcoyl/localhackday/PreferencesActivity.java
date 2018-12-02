@@ -10,7 +10,6 @@ import android.widget.Switch;
 public class PreferencesActivity extends AppCompatActivity {
 
     private Switch nightModeSwitch;
-    private Boolean isNightModeEnabled = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

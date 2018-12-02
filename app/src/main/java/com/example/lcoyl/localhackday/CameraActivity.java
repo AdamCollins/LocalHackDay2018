@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.hardware.Camera;
@@ -75,8 +76,14 @@ public class CameraActivity extends Activity {
 //                fos.write(data);
 //                fos.close();
                 //Send to ADAM
+
+                File outputFile = new File("LOCATION TO FILE");
+                FileOutputStream outputStream = new FileOutputStream(outputFile);
+                outputStream.write(data);  //write the bytes and your done.
+
+
                 ObjectIdentifier o = new ObjectIdentifier();
-                JSONObject obj = o.requestData(pictureFile);
+                JSONObject obj = o.requestData(outputFile);
                 Log.d(TAG, String.valueOf(obj));
 
 

@@ -19,7 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".CameraActivity">
+            android:name=".CameraActivity"
+            android:parentActivityName="com.example.lcoyl.localhackday.MainActivity">
+        </activity>
+         <activity
+             android:name=".PreferencesActivity"
+             android:parentActivityName="com.example.lcoyl.localhackday.MainActivity">
         </activity>
     </application>
 

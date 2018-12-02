@@ -15,6 +15,7 @@
         <item name="backgroundCardColor">#FFFF</item>
         <item name="dividerColor">#F2F2F3</item>
         <item name="backgroundColor">#FFFF</item>
+        <item name="buttonColor">#AFEEEE</item>
     </style>
 
     <!--&lt;!&ndash; Dark base activity theme &ndash;&gt;-->
@@ -24,6 +25,7 @@
         <item name="backgroundCardColor">#28292e</item>
         <item name="dividerColor">#F2F2F3</item>
         <item name="backgroundColor">#28292e</item>
+        <item name="buttonColor">#008B8B</item>
     </style>
 
 

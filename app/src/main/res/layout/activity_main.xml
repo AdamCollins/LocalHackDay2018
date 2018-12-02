@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="?attr/backgroundColor"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,6 +13,7 @@
         android:layout_height="102dp"
         android:text="APP TITLE"
         android:textSize="50sp"
+        android:textColor="?attr/primaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -30,6 +32,7 @@
         android:layout_marginRight="21dp"
         android:layout_marginBottom="15dp"
         android:text="Start "
+        android:textColor="?attr/secondaryTextColor"
         app:layout_constraintBottom_toTopOf="@+id/preferencesButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,6 +48,7 @@
         android:layout_marginRight="21dp"
         android:layout_marginBottom="7dp"
         android:text="Preferences"
+        android:textColor="?attr/secondaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

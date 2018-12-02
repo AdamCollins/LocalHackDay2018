@@ -2,9 +2,14 @@ package com.example.lcoyl.localhackday.AzureCV;
 
 import org.apache.http.client.utils.URIBuilder;
 
+import java.io.File;
+
 public class TextIdentifier  extends Identifier {
 
 
+    public TextIdentifier(File image) {
+        super(image);
+    }
 
     @Override
     protected String getEndPoint() {

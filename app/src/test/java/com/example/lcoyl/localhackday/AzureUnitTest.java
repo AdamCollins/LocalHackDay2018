@@ -14,9 +14,8 @@ public class AzureUnitTest {
     public void getImageIdentity(){
         File image = new File("C:\\Users\\Adam Collins\\Pictures\\liam.jpg");
 
-        System.out.println(image.exists());
-        Identifier cv = new ObjectIdentifier();
-        JSONObject json = cv.requestData(image);
+        Identifier cv = new ObjectIdentifier(image);
+        JSONObject json = cv.requestData2();
         System.out.println(json);
     }
 
@@ -25,8 +24,8 @@ public class AzureUnitTest {
         File image = new File("C:\\Users\\Adam Collins\\Pictures\\mango.jpg");
 
         System.out.println(image.exists());
-        Identifier cv = new TextIdentifier();
-        JSONObject json = cv.requestData(image);
+        Identifier cv = new TextIdentifier(image);
+        JSONObject json = cv.requestData();
         System.out.println(json);
     }
 

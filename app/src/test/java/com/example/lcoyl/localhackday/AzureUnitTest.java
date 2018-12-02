@@ -15,7 +15,7 @@ import java.io.FileInputStream;
 public class AzureUnitTest {
     @Test
     public void getImageIdentity(){
-        File image = new File("C:\\Users\\Adam Collins\\Pictures\\liam.jpg");
+        File image = new File("C:\\Users\\lcoyl\\Downloads\\Liam Coyle.jpeg");
 
         Identifier cv = new ObjectIdentifier(image);
         JSONObject json = cv.requestData2();

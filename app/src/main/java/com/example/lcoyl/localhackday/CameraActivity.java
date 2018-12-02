@@ -74,20 +74,21 @@ public class CameraActivity extends Activity {
             }
 
             try {
-//                FileOutputStream fos = new FileOutputStream(pictureFile);
-//                fos.write(data);
-//                fos.close();
+                FileOutputStream fos = new FileOutputStream(pictureFile);
+                fos.write(data);
+                fos.close();
 //                Send to ADAM
 
 
-
-                File tempFile = File.createTempFile("prefix", null, null);
-                FileOutputStream fos = new FileOutputStream(tempFile);
-                fos.write(data);
-
+//                File f = new File("image.jpg");
+//                FileOutputStream fos = new FileOutputStream(f);
+//                fos.write(data);
+//                fos.flush();
+//                fos.close();
+                //File image = new File("C:\\Users\\lcoyl\\Downloads\\Liam Coyle.jpeg");
                 ImageAnalyzer ia = new ImageAnalyzer();
 
-                JSONObject obj = ia.analyzeImage(tempFile).getObjectData();
+                JSONObject obj = ia.analyzeImage(pictureFile).getObjectData();
                 System.out.println(obj);
                 Log.d(TAG, String.valueOf(obj));
 

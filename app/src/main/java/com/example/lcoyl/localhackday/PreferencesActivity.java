@@ -4,8 +4,10 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
+import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.Switch;
+
 
 public class PreferencesActivity extends AppCompatActivity {
 
@@ -13,14 +15,19 @@ public class PreferencesActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //set up night/light mode
         if (AppCompatDelegate.getDefaultNightMode()
                 ==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.AppTheme_Dark);
         }
         else setTheme(R.style.AppTheme_Light);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preferences_layout);
 
+        setupPowerButtonTakesPhotoSwitch();
+        setupDayModeSwitch();
         nightModeSwitch = findViewById(R.id.nightModeSwitch);
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
             nightModeSwitch.setChecked(true);
@@ -31,10 +38,14 @@ public class PreferencesActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    MainActivity.setIsNightModeOn(true);
+                    textActivity.setIsNightModeOn(true);
                     reset();
                 }
                 else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    MainActivity.setIsNightModeOn(false);
+                    textActivity.setIsNightModeOn(false);
                     reset();
                 }
             }
@@ -83,5 +94,11 @@ public class PreferencesActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        setContentView(R.layout.activity_main);
+       Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+      startActivity(intent);
+    }
 
 }

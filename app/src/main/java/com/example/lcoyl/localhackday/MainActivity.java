@@ -11,9 +11,11 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toolbar;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -39,12 +41,28 @@ import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private Camera mCamera;
     private static final String TAG = "MainActivity";
+    private static Boolean isNightModeOn = false;
+
+    public static void setIsNightModeOn(Boolean b){
+        isNightModeOn = b;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //code for setting up night/light modes
+        if (isNightModeOn){
+            setTheme(R.style.AppTheme_Dark);
+        }
+        else setTheme(R.style.AppTheme_Light);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted
@@ -59,6 +77,11 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     2);
         }
+
+
+
+        // Create an instance of Camera
+        //mCamera = getCameraInstance();
 
 
 
@@ -77,12 +100,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.preferences_layout);
+
                 Intent intent = new Intent(getApplicationContext(), PreferencesActivity.class);
                 startActivity(intent);
             }
         });
 
     }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -93,7 +119,11 @@ public class MainActivity extends AppCompatActivity {
         else {
             // code to handle data from CAMERA_REQUEST
         }
+
     }
+
+
+
 
 
     /** A safe way to get an instance of the Camera object. */

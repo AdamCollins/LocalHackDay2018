@@ -11,13 +11,18 @@
         android:id="@+id/preferencesTitle"
         android:layout_width="300dp"
         android:layout_height="69dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginLeft="42dp"
+        android:layout_marginEnd="42dp"
+        android:layout_marginRight="42dp"
         android:fontFamily="serif"
         android:text="@string/preferences_title"
         android:textColor="?attr/primaryTextColor"
         android:textSize="50sp"
-        tools:layout_editor_absoluteX="42dp"
-        tools:layout_editor_absoluteY="67dp"
-        tools:ignore="MissingConstraints" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="67dp" />
 
 
     <Switch
@@ -32,7 +37,7 @@
         android:fontFamily="serif"
         android:text="Take photo on power button click"
         android:textColor="?attr/secondaryTextColor"
-        app:layout_constraintBottom_toTopOf="@+id/dayModeSwitch"
+        app:layout_constraintBottom_toTopOf="@+id/nightModeSwitch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +52,7 @@
         android:layout_marginRight="40dp"
         android:layout_marginBottom="261dp"
         android:fontFamily="serif"
-        android:text="Day mode on"
+        android:text="Night mode on"
         android:textColor="?attr/secondaryTextColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

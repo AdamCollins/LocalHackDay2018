@@ -54,14 +54,13 @@ public class CameraActivity extends Activity {
         mPreview = new CameraPreview(this, mCamera);
         FrameLayout preview = findViewById(R.id.camera_preview);
         preview.addView(mPreview);
-
-        Button capture = findViewById(R.id.button_capture);
-        capture.setOnClickListener(new View.OnClickListener(){
+        preview.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 mCamera.takePicture(null, null, mPicture);
             }
         });
+        
     }
     private Camera.PictureCallback mPicture = new Camera.PictureCallback() {
 

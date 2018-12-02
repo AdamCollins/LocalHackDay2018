@@ -78,7 +78,7 @@ public class CameraActivity extends Activity {
                 ObjectIdentifier o = new ObjectIdentifier();
                 JSONObject obj = o.requestData(pictureFile);
                 Log.d(TAG, String.valueOf(obj));
-                
+
 
             } catch (Exception e) {
                 Log.d(TAG, "Error: " + e.getMessage());

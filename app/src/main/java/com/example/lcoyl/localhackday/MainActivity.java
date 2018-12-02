@@ -52,6 +52,10 @@ public class MainActivity extends AppCompatActivity {
                     new String[]{Manifest.permission.CAMERA},
                     1);
         }
+
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.CAMERA},
+                1);
         // Create an instance of Camera
         //mCamera = getCameraInstance();
 

@@ -35,34 +35,16 @@ public class CameraActivity extends Activity {
         FrameLayout preview = findViewById(R.id.camera_preview);
         preview.addView(mPreview);
 
-//        Button capture = findViewById(R.id.button_capture);
-//        capture.setOnClickListener(new View.OnClickListener(){
-//            @Override
-//            public void onClick(View v){
-//                dispatchTakePictureIntent();
-//            }
-//        });
-    }
-    static final int REQUEST_IMAGE_CAPTURE = 1;
+        Button capture = findViewById(R.id.button_capture);
+        capture.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
 
-    private void dispatchTakePictureIntent() {
-        Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-        if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
-            startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE);
-        }
+            }
+        });
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (requestCode == REQUEST_IMAGE_CAPTURE && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap imageBitmap = (Bitmap) extras.get("data");
-            FrameLayout preview = findViewById(R.id.camera_preview);
-            Drawable d = new BitmapDrawable(getResources(), imageBitmap);
-            preview.setBackgroundDrawable(d);
-            //mImageView.setImageBitmap(imageBitmap);
-        }
-    }
+
     /** Check if this device has a camera */
     private boolean checkCameraHardware(Context context) {
         if (context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)){

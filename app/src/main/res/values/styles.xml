@@ -11,7 +11,7 @@
     <!-- Light base activity theme -->
     <style name="AppTheme_Light" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="primaryTextColor">#008080</item>
-        <item name="secondaryTextColor">#96F4F4F6</item>
+        <item name="secondaryTextColor">#28292e</item>
         <item name="backgroundCardColor">#FFFF</item>
         <item name="dividerColor">#F2F2F3</item>
         <item name="backgroundColor">#FFFF</item>

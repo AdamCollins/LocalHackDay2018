@@ -3,7 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:theme="@style/AppTheme_Dark"
+    android:background="?attr/backgroundColor">
 
     <TextView
         android:id="@+id/preferencesTitle"
@@ -11,12 +14,11 @@
         android:layout_height="69dp"
         android:fontFamily="serif"
         android:text="@string/preferences_title"
+        android:textColor="?attr/primaryTextColor"
         android:textSize="50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.135" />
+        tools:layout_editor_absoluteX="42dp"
+        tools:layout_editor_absoluteY="67dp"
+        tools:ignore="MissingConstraints" />
 
 
     <Switch
@@ -50,6 +52,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/powerButtonTakesPhotoSwitch" />
+
+
 
 
 </android.support.constraint.ConstraintLayout>

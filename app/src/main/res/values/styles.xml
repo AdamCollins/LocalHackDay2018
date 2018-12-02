@@ -1,27 +1,30 @@
 <resources>
 
     <!--&lt;!&ndash; Base application theme. &ndash;&gt;-->
-    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
-        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
-        <!--<item name="colorPrimary">@color/colorPrimary</item>-->
-        <!--<item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
-        <!--<item name="colorAccent">@color/colorAccent</item>-->
-    <!--</style>-->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
 
     <!-- Light base activity theme -->
-    <style name="AppTheme_Light" parent="Theme.AppCompat.NoActionBar">
+    <style name="AppTheme_Light" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="primaryTextColor">#008080</item>
         <item name="secondaryTextColor">#96F4F4F6</item>
         <item name="backgroundCardColor">#FFFF</item>
         <item name="dividerColor">#F2F2F3</item>
+        <item name="backgroundColor">#FFFF</item>
     </style>
 
-    <!-- Dark base activity theme -->
-    <style name="AppTheme_Dark" parent="Theme.AppCompat.NoActionBar">
+    <!--&lt;!&ndash; Dark base activity theme &ndash;&gt;-->
+    <style name="AppTheme_Dark" parent="Theme.AppCompat.Light.DarkActionBar">
         <item name="primaryTextColor">#AFEEEE</item>
         <item name="secondaryTextColor">#FFE4C4</item>
         <item name="backgroundCardColor">#28292e</item>
         <item name="dividerColor">#F2F2F3</item>
+        <item name="backgroundColor">#28292e</item>
     </style>
+
 
 </resources>

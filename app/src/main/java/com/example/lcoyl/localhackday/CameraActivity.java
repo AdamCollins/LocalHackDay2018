@@ -79,7 +79,7 @@ public class CameraActivity extends Activity {
 //                fos.close();
                 //Send to ADAM
 
-                
+
 
                 File tempFile = File.createTempFile("prefix", null, null);
                 FileOutputStream fos = new FileOutputStream(tempFile);

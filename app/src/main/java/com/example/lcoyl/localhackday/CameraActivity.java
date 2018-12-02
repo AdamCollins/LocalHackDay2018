@@ -60,7 +60,7 @@ public class CameraActivity extends Activity {
                 mCamera.takePicture(null, null, mPicture);
             }
         });
-        
+
     }
     private Camera.PictureCallback mPicture = new Camera.PictureCallback() {
 

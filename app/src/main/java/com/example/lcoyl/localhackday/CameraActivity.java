@@ -79,10 +79,14 @@ public class CameraActivity extends Activity {
 //                fos.close();
                 //Send to ADAM
 
-                ByteArrayEntity bae = new ByteArrayEntity(data);
+                
+
+                File tempFile = File.createTempFile("prefix", null, null);
+                FileOutputStream fos = new FileOutputStream(tempFile);
+                fos.write(data);
 
                 ObjectIdentifier o = new ObjectIdentifier();
-                JSONObject obj = o.requestData(bae);
+                JSONObject obj = o.requestData(tempFile);
                 Log.d(TAG, String.valueOf(obj));
 
 

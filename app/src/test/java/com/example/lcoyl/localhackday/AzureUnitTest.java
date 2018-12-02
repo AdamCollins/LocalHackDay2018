@@ -4,10 +4,13 @@ import com.example.lcoyl.localhackday.AzureCV.Identifier;
 import com.example.lcoyl.localhackday.AzureCV.ObjectIdentifier;
 import com.example.lcoyl.localhackday.AzureCV.TextIdentifier;
 
+import org.apache.http.entity.ByteArrayEntity;
 import org.json.JSONObject;
 import org.junit.Test;
 
+import java.io.BufferedInputStream;
 import java.io.File;
+import java.io.FileInputStream;
 
 public class AzureUnitTest {
     @Test
@@ -23,6 +26,7 @@ public class AzureUnitTest {
     @Test
     public void getTextReader(){
         File image = new File("C:\\Users\\Adam Collins\\Pictures\\mango.jpg");
+
 
         System.out.println(image.exists());
         Identifier cv = new TextIdentifier();

@@ -39,11 +39,13 @@ public class PreferencesActivity extends AppCompatActivity {
                 if (isChecked){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
                     MainActivity.setIsNightModeOn(true);
+                    textActivity.setIsNightModeOn(true);
                     reset();
                 }
                 else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
                     MainActivity.setIsNightModeOn(false);
+                    textActivity.setIsNightModeOn(false);
                     reset();
                 }
             }

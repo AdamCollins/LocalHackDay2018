@@ -1,4 +1,4 @@
-package com.example.lcoyl.localhackday.AzureAPI;
+package com.example.lcoyl.localhackday.AzureCV;
 
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
@@ -6,9 +6,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
 import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.entity.FileEntity;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
@@ -16,19 +13,19 @@ import org.json.JSONObject;
 import java.io.File;
 import java.net.URI;
 
-
-public class ComputerVision {
+public abstract class Identifier {
     private final String api_key = "699c3c58d8aa4194b3aa198dcb6c5ba7";
-    private final String endpoint = "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze";
+    protected final String endpoint = "https://westcentralus.api.cognitive.microsoft.com/vision/v2.0/";
+    protected abstract String getEndPoint();
+    protected abstract URIBuilder addParamaters(URIBuilder builder);
 
-    public JSONObject imageData(File image){
+    public JSONObject requestData(File image){
         HttpClient httpclient = HttpClients.createDefault();
         JSONObject jsonRes = null;
         try {
-            URIBuilder builder = new URIBuilder(endpoint);
+            URIBuilder builder = new URIBuilder(getEndPoint());
 
-            builder.setParameter("visualFeatures", "Categories,Description,Color");
-            builder.setParameter("language", "en");
+            builder = addParamaters(builder);
 
             URI uri = builder.build();
             HttpPost request = new HttpPost(uri);
@@ -59,8 +56,5 @@ public class ComputerVision {
     public boolean isImage(File image){
         return true;
     }
-
-
-
 
 }

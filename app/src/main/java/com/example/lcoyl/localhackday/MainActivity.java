@@ -11,6 +11,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -39,12 +40,28 @@ import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO;
 
 public class MainActivity extends AppCompatActivity {
 
+
     private Camera mCamera;
     private static final String TAG = "MainActivity";
+    private static Boolean isNightModeOn = true;
+
+    public static void setIsNightModeOn(Boolean b){
+        isNightModeOn = b;
+    }
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        //code for setting up night/light modes
+        if (isNightModeOn){
+            setTheme(R.style.AppTheme_Dark);
+        }
+        else setTheme(R.style.AppTheme_Light);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
         if (ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 != PackageManager.PERMISSION_GRANTED) {
             // Permission is not granted

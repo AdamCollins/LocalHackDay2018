@@ -7,17 +7,21 @@ import android.support.v7.app.AppCompatDelegate;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
+
 public class PreferencesActivity extends AppCompatActivity {
 
     private Switch nightModeSwitch;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        //set up night/light mode
         if (AppCompatDelegate.getDefaultNightMode()
                 ==AppCompatDelegate.MODE_NIGHT_YES) {
             setTheme(R.style.AppTheme_Dark);
         }
         else setTheme(R.style.AppTheme_Light);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preferences_layout);
 
@@ -31,10 +35,12 @@ public class PreferencesActivity extends AppCompatActivity {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked){
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+                    MainActivity.setIsNightModeOn(true);
                     reset();
                 }
                 else {
                     AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+                    MainActivity.setIsNightModeOn(false);
                     reset();
                 }
             }

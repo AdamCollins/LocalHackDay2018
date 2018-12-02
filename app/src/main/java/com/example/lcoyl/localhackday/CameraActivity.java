@@ -79,7 +79,7 @@ public class CameraActivity extends Activity {
 //                fos.close();
                 //Send to ADAM
 
-                
+
 
                 File tempFile = File.createTempFile("prefix", null, null);
                 FileOutputStream fos = new FileOutputStream(tempFile);
@@ -141,4 +141,10 @@ public class CameraActivity extends Activity {
         }
     }
 
+    @Override
+    public void onBackPressed(){
+        setContentView(R.layout.activity_main);
+        Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(intent);
+    }
 }

@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.AppCompatDelegate;
+import android.view.MenuItem;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 
@@ -25,6 +26,8 @@ public class PreferencesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preferences_layout);
 
+        setupPowerButtonTakesPhotoSwitch();
+        setupDayModeSwitch();
         nightModeSwitch = findViewById(R.id.nightModeSwitch);
         if(AppCompatDelegate.getDefaultNightMode()==AppCompatDelegate.MODE_NIGHT_YES){
             nightModeSwitch.setChecked(true);
@@ -89,5 +92,11 @@ public class PreferencesActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public void onBackPressed(){
+        setContentView(R.layout.activity_main);
+       Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+      startActivity(intent);
+    }
 
 }

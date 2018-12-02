@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatDelegate;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toolbar;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Camera mCamera;
     private static final String TAG = "MainActivity";
-    private static Boolean isNightModeOn = true;
+    private static Boolean isNightModeOn = false;
 
     public static void setIsNightModeOn(Boolean b){
         isNightModeOn = b;
@@ -79,6 +80,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+        // Create an instance of Camera
+        //mCamera = getCameraInstance();
+
+
+
         Button startButton = findViewById(R.id.startButton);
         startButton.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -94,12 +100,15 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.preferences_layout);
+
                 Intent intent = new Intent(getApplicationContext(), PreferencesActivity.class);
                 startActivity(intent);
             }
         });
 
     }
+
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
@@ -110,7 +119,11 @@ public class MainActivity extends AppCompatActivity {
         else {
             // code to handle data from CAMERA_REQUEST
         }
+
     }
+
+
+
 
 
     /** A safe way to get an instance of the Camera object. */

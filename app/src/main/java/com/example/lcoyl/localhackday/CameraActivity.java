@@ -26,22 +26,22 @@ public class CameraActivity extends Activity {
         setContentView(R.layout.photo_screen);
 
 
-//        if(checkCameraHardware(this))
-//            // Create an instance of Camera
-//            mCamera = getCameraInstance();
-//
-//        // Create our Preview view and set it as the content of our activity.
-//        mPreview = new CameraPreview(this, mCamera);
-//        FrameLayout preview = findViewById(R.id.camera_preview);
-//        preview.addView(mPreview);
+        if(checkCameraHardware(this))
+            // Create an instance of Camera
+            mCamera = getCameraInstance();
 
-        Button capture = findViewById(R.id.button_capture);
-        capture.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                dispatchTakePictureIntent();
-            }
-        });
+        // Create our Preview view and set it as the content of our activity.
+        mPreview = new CameraPreview(this, mCamera);
+        FrameLayout preview = findViewById(R.id.camera_preview);
+        preview.addView(mPreview);
+
+//        Button capture = findViewById(R.id.button_capture);
+//        capture.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                dispatchTakePictureIntent();
+//            }
+//        });
     }
     static final int REQUEST_IMAGE_CAPTURE = 1;
 

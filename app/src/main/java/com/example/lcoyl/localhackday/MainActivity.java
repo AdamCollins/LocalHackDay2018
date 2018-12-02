@@ -29,6 +29,7 @@ import org.apache.http.entity.FileEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import static android.hardware.Camera.getNumberOfCameras;
 import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_IMAGE;
 import static android.provider.MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO;
 
@@ -132,7 +133,10 @@ public class MainActivity extends AppCompatActivity {
     public static Camera getCameraInstance(){
         Camera c = null;
         try {
-            c = Camera.open(); // attempt to get a Camera instance
+            int i = Camera.getNumberOfCameras();
+
+            Log.d(TAG, String.valueOf(i));
+            c = Camera.open(0); // attempt to get a Camera instance
         }
         catch (Exception e){
             Log.d(TAG, e.getMessage());// Camera is not available (in use or does not exist)

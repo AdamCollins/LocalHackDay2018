@@ -60,9 +60,6 @@ public class MainActivity extends AppCompatActivity {
                     2);
         }
 
-        // Create an instance of Camera
-        //mCamera = getCameraInstance();
-
 
 
         Button startButton = findViewById(R.id.startButton);

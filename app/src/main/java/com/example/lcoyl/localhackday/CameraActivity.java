@@ -19,8 +19,11 @@ import android.widget.FrameLayout;
 
 import com.example.lcoyl.localhackday.AzureCV.ObjectIdentifier;
 
+import org.apache.http.entity.ByteArrayEntity;
+import org.apache.http.entity.FileEntity;
 import org.json.JSONObject;
 
+import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -77,13 +80,10 @@ public class CameraActivity extends Activity {
 //                fos.close();
                 //Send to ADAM
 
-                File outputFile = new File("LOCATION TO FILE");
-                FileOutputStream outputStream = new FileOutputStream(outputFile);
-                outputStream.write(data);  //write the bytes and your done.
-
+                ByteArrayEntity bae = new ByteArrayEntity(data);
 
                 ObjectIdentifier o = new ObjectIdentifier();
-                JSONObject obj = o.requestData(outputFile);
+                JSONObject obj = o.requestData(bae);
                 Log.d(TAG, String.valueOf(obj));
 
 

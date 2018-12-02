@@ -77,7 +77,7 @@ public class CameraActivity extends Activity {
 //                FileOutputStream fos = new FileOutputStream(pictureFile);
 //                fos.write(data);
 //                fos.close();
-                //Send to ADAM
+//                Send to ADAM
 
 
 
@@ -85,10 +85,16 @@ public class CameraActivity extends Activity {
                 FileOutputStream fos = new FileOutputStream(tempFile);
                 fos.write(data);
 
-                ObjectIdentifier o = new ObjectIdentifier();
-                JSONObject obj = o.requestData(tempFile);
+                ImageAnalyzer ia = new ImageAnalyzer();
+
+                JSONObject obj = ia.analyzeImage(tempFile).getObjectData();
+                System.out.println(obj);
                 Log.d(TAG, String.valueOf(obj));
 
+                setContentView(R.layout.text_activity);
+                Intent intent = new Intent(getApplicationContext(), textActivity.class);
+                intent.putExtra("Message", String.valueOf(obj));
+                startActivity(intent);
 
             } catch (Exception e) {
                 Log.d(TAG, "Error: " + e.getMessage());

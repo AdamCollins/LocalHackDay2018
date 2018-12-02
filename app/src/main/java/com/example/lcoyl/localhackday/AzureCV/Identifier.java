@@ -72,7 +72,6 @@ public abstract class Identifier {
     public JSONObject requestData2(){
 
 
-        HttpClient httpclient = HttpClients.createDefault();
 
         JSONObject jsonRes = null;
         try {

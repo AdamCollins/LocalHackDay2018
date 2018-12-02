@@ -77,10 +77,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 setContentView(R.layout.preferences_layout);
+                Intent intent = new Intent(getApplicationContext(), PreferencesActivity.class);
+                startActivity(intent);
             }
         });
 
     }
+
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data)
     {

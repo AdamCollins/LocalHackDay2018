@@ -32,7 +32,7 @@
         android:fontFamily="serif"
         android:text="Take photo on power button click"
         android:textColor="?attr/secondaryTextColor"
-        app:layout_constraintBottom_toTopOf="@+id/dayModeSwitch"
+        app:layout_constraintBottom_toTopOf="@+id/nightModeSwitch"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
